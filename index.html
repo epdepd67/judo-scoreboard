@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
- 
 <head>
   <meta charset="UTF-8">
   <title>Judo Scoreboard</title>
@@ -8,6 +7,7 @@
 </head>
 <body>
   <div class="scoreboard">
+    <!-- Timer Controls -->
     <div class="timer-controls">
       <input type="number" id="minutes" value="2" min="1" max="10"> min
       <button onclick="startTimer()">Start</button>
@@ -16,7 +16,9 @@
     </div>
     <div class="timer" id="timer-display">2:00</div>
 
+    <!-- Competitors -->
     <div class="competitors">
+      <!-- Shiro -->
       <div class="competitor shiro">
         <h2>Shiro</h2>
         <div class="scores">
@@ -42,6 +44,7 @@
         </div>
       </div>
 
+      <!-- AKA -->
       <div class="competitor aka">
         <h2>AKA</h2>
         <div class="scores">
@@ -68,29 +71,29 @@
       </div>
     </div>
 
+    <!-- Hantei -->
     <div class="hantei">
       <button class="hantei-btn">HANTEI</button>
     </div>
 
+    <!-- Match Summary -->
     <div class="match-summary">
       <h3>Match Summary</h3>
       <div id="summary-text">Waiting for match data...</div>
     </div>
 
+    <!-- Declare Winner -->
     <div class="declare-winner">
       <button onclick="declareWinner()">Declare Winner</button>
     </div>
 
+    <!-- Reset Match -->
     <div class="reset-match">
       <button onclick="resetMatch()">Reset Match</button>
     </div>
   </div>
 
   <audio id="buzzer" src="buzzer.mp3" preload="auto"></audio>
-  <script src="script.js"></script>
   <script src="script.js" defer></script>
-
 </body>
-
 </html>
-
