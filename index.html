@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Judo Scoreboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scoreboard">
+    <div class="timer-controls">
+      <input type="number" id="minutes" value="2" min="1" max="10"> min
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+    <div class="timer" id="timer-display">2:00</div>
+
+    <div class="competitors">
+      <div class="competitor shiro">
+        <h2>Shiro</h2>
+        <div class="scores">
+          <div>IPPON: <span id="shiro-ippon">0</span></div>
+          <div>WAZA-ARI: <span id="shiro-waza">0</span></div>
+        </div>
+        <div class="controls">
+          <button onclick="updateScore('shiro', 'ippon')">K1</button>
+          <button onclick="updateScore('shiro', 'waza')">K2</button>
+        </div>
+        <div class="penalties">
+          <h3>Penalties</h3>
+          <div>K1: <span id="shiro-k1">0</span> <button onclick="addPenalty('shiro', 'k1')">+</button></div>
+          <div>K2: <span id="shiro-k2">0</span> <button onclick="addPenalty('shiro', 'k2')">+</button></div>
+          <div>KC: <span id="shiro-kc">0</span> <button onclick="addPenalty('shiro', 'kc')">+</button></div>
+          <div>KH: <span id="shiro-kh">0</span> <button onclick="addPenalty('shiro', 'kh')">+</button></div>
+        </div>
+        <div class="atenai">
+          <h3>Atenai Warnings</h3>
+          <div>A1: <span id="shiro-a1">0</span> <button onclick="addAtenai('shiro', 'a1')">+</button></div>
+          <div>AC: <span id="shiro-ac">0</span> <button onclick="addAtenai('shiro', 'ac')">+</button></div>
+          <div>AH: <span id="shiro-ah">0</span> <button onclick="addAtenai('shiro', 'ah')">+</button></div>
+        </div>
+      </div>
+
+      <div class="competitor aka">
+        <h2>AKA</h2>
+        <div class="scores">
+          <div>IPPON: <span id="aka-ippon">0</span></div>
+          <div>WAZA-ARI: <span id="aka-waza">0</span></div>
+        </div>
+        <div class="controls">
+          <button onclick="updateScore('aka', 'ippon')">K1</button>
+          <button onclick="updateScore('aka', 'waza')">K2</button>
+        </div>
+        <div class="penalties">
+          <h3>Penalties</h3>
+          <div>K1: <span id="aka-k1">0</span> <button onclick="addPenalty('aka', 'k1')">+</button></div>
+          <div>K2: <span id="aka-k2">0</span> <button onclick="addPenalty('aka', 'k2')">+</button></div>
+          <div>KC: <span id="aka-kc">0</span> <button onclick="addPenalty('aka', 'kc')">+</button></div>
+          <div>KH: <span id="aka-kh">0</span> <button onclick="addPenalty('aka', 'kh')">+</button></div>
+        </div>
+        <div class="atenai">
+          <h3>Atenai Warnings</h3>
+          <div>A1: <span id="aka-a1">0</span> <button onclick="addAtenai('aka', 'a1')">+</button></div>
+          <div>AC: <span id="aka-ac">0</span> <button onclick="addAtenai('aka', 'ac')">+</button></div>
+          <div>AH: <span id="aka-ah">0</span> <button onclick="addAtenai('aka', 'ah')">+</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hantei">
+      <button class="hantei-btn">HANTEI</button>
+    </div>
+
+    <div class="match-summary">
+      <h3>Match Summary</h3>
+      <div id="summary-text">Waiting for match data...</div>
+    </div>
+
+    <div class="declare-winner">
+      <button onclick="declareWinner()">Declare Winner</button>
+    </div>
+
+    <div class="reset-match">
+      <button onclick="resetMatch()">Reset Match</button>
+    </div>
+  </div>
+
+  <audio id="buzzer" src="buzzer.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
